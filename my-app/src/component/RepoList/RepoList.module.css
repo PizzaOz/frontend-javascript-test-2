@@ -1,0 +1,23 @@
+.repoList {
+  max-width: 800px;
+  margin: 0;
+  padding: 20px;
+}
+
+.repoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.loader {
+  font-size: 1.2rem;
+  color: #007bff;
+  padding: 20px;
+}
+
+.endMessage {
+  font-size: 1.2rem;
+  color: #555;
+  padding: 20px;
+}

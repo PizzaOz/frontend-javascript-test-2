@@ -1,8 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
-import RepoList from "./component/RepoList/RepoList";
-import SearchField from "./component/SearchField/SearchField";
-import { fetchRepos } from "./store/users-reducer";
+import RepoList from "../RepoList/RepoList";
+import SearchField from "../SearchField/SearchField";
+import { fetchRepos } from "../../store/users-reducer";
 import { useState } from "react";
+import styles from './App.module.css';
 
 
 const App = () => {
@@ -22,46 +23,14 @@ const App = () => {
   };
 
   return (
-    <div className="app">
-      <h1>Поиск репозиториев GitHub</h1>
+    <div div className={styles.app}>
+      <h1 className={styles.title}>Поиск репозиториев GitHub</h1>
       <SearchField onSearch={handleSearch} />
-      {loading && <p>Загрузка...</p>}
-      {error && <p>{error}</p>}
+      {loading && <p className={styles.loading}>Загрузка...</p>}
+      {error && <p className={styles.error}>{error}</p>}
       <RepoList repos={repos} fetchMoreRepos={fetchMoreRepos} hasMore={hasMore} />
     </div>
   );
 };
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import RepoList from "./component/RepoList/RepoList";
-// import Search from "./component/SearchField/SearchField";
-// import SearchField from "./component/SearchField/SearchField";
-
-
-
-
-
-// function App() {
-//   return (
-//     <div>
-// <Search/>
-// <RepoList />
-//     </div>
-//   );
-// }
-
-// export default App;
